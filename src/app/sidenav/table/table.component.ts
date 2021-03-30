@@ -40,7 +40,6 @@ export class TableComponent implements  AfterViewInit {
     this.dataSource.sort=this.sort;
     this.dataSource.paginator=this.paginator;
   }
-
   displayedColumns: string[] = ['position', 'name', 'symbol', 'price', 'weight'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
