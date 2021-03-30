@@ -1,0 +1,111 @@
+<div class="home">
+<div class="row subs-count"> 
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-info">
+      <div class="card-body pb-0">
+        <div class="text-value">4,321</div>
+        <div>Members online</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+        <canvas baseChart class="chart"
+        [datasets]="lineChart2Data"
+        [labels]="lineChart2Labels"
+        [options]="lineChart2Options"
+        [colors]="lineChart2Colours"
+        [legend]="lineChart2Legend"
+        [chartType]="lineChart2Type"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-primary">
+      <div class="card-body pb-0">
+        <div class="text-value">4,321</div>
+        <div>Members online</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+        <canvas baseChart class="chart"
+                [datasets]="lineChart1Data"
+                [labels]="lineChart1Labels"
+                [options]="lineChart1Options"
+                [colors]="lineChart1Colours"
+                [legend]="lineChart1Legend"
+                [chartType]="lineChart1Type">
+              </canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-warning">
+      <div class="card-body pb-0">
+        <div class="text-value">4,321</div>
+        <div>Members online</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+        <canvas baseChart class="chart"
+        [datasets]="lineChart3Data"
+        [labels]="lineChart3Labels"
+        [options]="lineChart3Options"
+        [colors]="lineChart3Colours"
+        [legend]="lineChart3Legend"
+        [chartType]="lineChart3Type"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-danger">
+      <div class="card-body pb-0">
+        <div class="text-value">4,321</div>
+        <div>Members online</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+        <canvas baseChart class="chart"
+        [datasets]="barChart1Data"
+        [labels]="barChart1Labels"
+        [options]="barChart1Options"
+        [colors]="barChart1Colours"
+        [legend]="barChart1Legend"
+        [chartType]="barChart1Type"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row g-chart">
+  <div class="col-sm-6 col-lg-4">
+    <div id="doughnut" class="chart-wrapper">
+      <canvas baseChart 
+        [data]="doughnutChartData"
+        [labels]="doughnutChartLabels"
+        [chartType]="doughnutChartType">
+      </canvas>
+    </div>
+    <div id="radar" class="chart-wrapper">
+      <canvas baseChart
+        [datasets]="radarChartData"
+        [options]="radarChartOptions"
+        [labels]="radarChartLabels"
+      [chartType]="radarChartType">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-8">
+    <div id="line" class="chart-wrapper">
+      <canvas baseChart 
+          [datasets]="lineChartData" 
+          [labels]="lineChartLabels" 
+          [options]="lineChartOptions"
+          [colors]="lineChartColors" 
+          [legend]="lineChartLegend" 
+          [chartType]="lineChartType" 
+          [plugins]="lineChartPlugins">
+      </canvas>
+  </div>
+  </div>
+</div>
+
+</div>
+
+

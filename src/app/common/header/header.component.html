@@ -1,0 +1,45 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class="navbar" *ngIf="service.loggedIn()">       
+            <div>
+                <button mat-icon-button class="sidenav-btn"><mat-icon (click)="opened=!opened">menu</mat-icon></button>
+                Mindfire
+            </div>
+            <div>
+                <span><a href="#" >Home</a></span>
+                <span><a href="#">About</a></span>
+                <span><a href="#">Settings</a></span>
+                <span [matBadge]="messages" [matBadgeHidden]="messages===0" matBadgeSize="small"  matBadgeColor="blue" [matMenuTriggerFor]="msgMenu">
+                    <mat-icon>notification_important</mat-icon>
+                </span>
+                <mat-menu #msgMenu="matMenu">
+                    <button mat-menu-item>Message 1</button>
+                    <button mat-menu-item>Message 2</button>
+                    <button mat-menu-item>Message 3</button>
+                    <button mat-menu-item>Go to message list</button>
+                </mat-menu>
+                <span><mat-icon>location_on</mat-icon></span>
+        
+                <span *ngIf="!service.loggedIn()"  >
+                    <button (click)="onClick()" class="btn btn-primary " type="submit" routerLinkActive="active" routerLink="/login">
+                        Login
+                    </button>
+                </span>
+                <span *ngIf="service.loggedIn()">
+                    <button (click)="service.logOut()" class="btn btn-primary " type="submit">Log Out</button>
+                </span>  
+            </div>
+        </mat-toolbar>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-sidenav  opened class="sidenav" mode="pushed" [(opened)]="opened">
+    <button mat-icon-button class="sidenav-btn"><mat-icon (click)="opened=!opened">menu</mat-icon></button>
+    <div class="sidebar-list">
+    <ul>
+      <li><a href="/dashboard" ><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="/chart"><i class="fa fa-bar-chart"></i> Charts</a></li>
+      <li><a href="/account"><i class="fa  fa-tasks"></i> Account</a></li>
+      <li><a href="/table"><i class="fa  fa-table" ></i> Tables</a></li> 
+    </ul>
+  </div>
+</mat-sidenav>

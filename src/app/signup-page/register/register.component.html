@@ -1,0 +1,98 @@
+<div class="register-header">
+    <mat-toolbar color="primary" class="navbar">
+        <a class="navbar-brand">{{brandName}}</a>
+        <form class="form-inline">
+            <div *ngIf="!logIn" >
+              <button (click)="onClick()" class="btn btn-primary " type="submit" routerLinkActive="active" 
+              routerLink="/register" >Register</button>
+            </div>
+            <div *ngIf="logIn" >
+                <button (click)="onClick()" class="btn btn-primary " type="submit" routerLinkActive="active" 
+                routerLink="/login">Login</button>
+              </div>
+          </form>
+    </mat-toolbar>
+</div>
+<p>Signup</p>
+<div class="my-form">
+  
+    <form class="form-signin"  name="signup" (ngSubmit)="onSubmit()">
+  
+      <div class="row">
+        <div class="col">
+          <input [(ngModel)]="signup.fname" type="text" name="fname" class="form-control" placeholder="First Name" #fname="ngModel"  required>
+          <div class="alert alert-danger" *ngIf="fname.errors  && (fname.dirty || fname.touched) ">              
+            Please provide firstname
+          </div>
+        </div>
+        <div class="col">
+          <input [(ngModel)]="signup.lname" type="text" name="lname" class="form-control" placeholder="Last Name"  #lname="ngModel" required>
+          <div class="alert alert-danger" *ngIf="lname.errors  && (lname.dirty || lname.touched)">              
+            Please provide lastname
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <input [(ngModel)]="signup.mail" type="email" name="mail" class="form-control" placeholder="Email" #mail="ngModel" ngModel email required  >
+          <div class="alert alert-danger" *ngIf="mail.invalid && (mail.dirty || mail.touched)">                               
+            <div *ngIf="mail.hasError('required')">
+              Please provide email.
+            </div>
+            <div *ngIf="mail.hasError('email')">
+              Enter a valid email.
+            </div>
+          </div>
+        </div>
+        <div>
+          <input [(ngModel)]="signup.pnumber" type="tel" name="pnumber" class="form-control" placeholder="Phone Number" #pnumber="ngModel" ngModel minlength="10" maxlength="10" required>
+          <div class="alert alert-danger" *ngIf="pnumber.invalid && (pnumber.dirty || pnumber.touched)">                               
+            <div *ngIf="pnumber.hasError('required')">Contact No. is required.</div>
+            <div *ngIf="pnumber.hasError('minlength')">Enter valid No. of length 10.</div>
+            <div *ngIf="pnumber.hasError('maxlength')">Enter valid No. of length 10.</div>
+          </div>           
+        </div>
+        <div>
+          <select [(ngModel)]="signup.state" class="form-control"  #state="ngModel" (change)="changeCountry($event.target.value)" required  >
+            <option *ngFor ="let count of stateList">{{count.name}}</option>
+          </select>
+          <div class="alert alert-danger" *ngIf="state.errors  && (state.dirty || state.touched)">              
+            Please select your state
+          </div>
+        </div>
+        <div>
+          <select [(ngModel)]="signup.city" name="city" class="form-control" #city="ngModel" >
+            <option *ngFor ="let city of cities">{{city}}</option>
+          </select>
+          <div class="alert alert-danger" *ngIf="city.errors  && (city.dirty || city.touched)">              
+            Please select your city
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input [(ngModel)]="signup.password" type="password" name="Password" class="form-control" placeholder="Create password"  #password="ngModel" ngModel minlength="6" required>
+            <div class="alert alert-danger" *ngIf="password.invalid && password.touched">              
+              <div *ngIf="password.hasError('required')">Password is required</div>
+              <div *ngIf="password.hasError('minlength')">Minimum 6 characters required</div>
+            </div>
+          </div>
+          <div class="col">
+            <input [(ngModel)]="signup.confirmPwd" type="password" name="confirmPwd" class="form-control" placeholder="confirm password"  #confirmPwd="ngModel" ngModel minlength="6" required>
+            <div class="alert alert-danger" *ngIf="signup.password!=signup.confirmPwd && confirmPwd.touched" >              
+              Password not matching
+            </div>
+      
+          </div>
+        </div>
+        <div class="row form-btn">
+          <div class="col">
+            <button class="btn btn-lg btn-primary btn-block " type="submit" >Sign Me Up!</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-lg btn-danger btn-block" type="reset">Clear</button>
+          </div>
+        </div>
+      </div> 
+    </form>
+  </div>
+    

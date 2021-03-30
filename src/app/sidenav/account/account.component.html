@@ -1,0 +1,111 @@
+
+<div class="profile">
+  <div class="row">
+    <div class="col-sm-6 col-lg-4">
+      <h1>Your Profile</h1>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center text-center">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+            <div class="">
+              <h4>Hi {{username}}</h4>
+              <p class="text-secondary mb-1">Full Stack Developer</p>
+              <p class="text-muted font-size-sm">Noida, Uttar Pradesh, India</p>
+              <button class="btn btn-primary btn-block">Update</button>
+              <button class="btn btn-outline-danger btn-block">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-8">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <h4 >First Name</h4>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="text" name="fname" id="fname" placeholder="First Name" required />
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h3 >Last Name</h3>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="text" name="lname" id="lname" placeholder="Last Name" required />
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h3 class="mb-0">Phone Number </h3>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="tel" name="pnumber" id="pnumber" placeholder="Phone Number" required />
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h4>Email</h4>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="text" name="email" id="email" placeholder="anshul01@gmail.com" disabled />
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h4 class="mb-0">Password</h4>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-3">
+              <h4>Confirm Password</h4>
+            </div>
+            <div class="col-sm-9 text-secondary">
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" id="password" placeholder="********" required />
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="account" >
+  <h1 class="table-heading">List of Registered Users</h1>
+  <table id="users">
+    <tr>
+      <th *ngFor="let columns of headers">
+        {{columns}}
+      </th>
+    </tr>
+    <tr *ngFor="let item of userList">
+      <td>{{item.fname}}</td>
+      <td>{{item.lname}}</td>
+      <td>{{item.pnumber}}</td>
+      <td>{{item.mail}}</td>
+      <td>{{item.city}}</td>
+     </tr>
+  </table>
+</div>

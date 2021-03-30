@@ -1,0 +1,27 @@
+<div class="login-header">
+    <mat-toolbar color="primary" class="navbar">
+        <a class="navbar-brand">{{brandName}}</a>
+        <form class="form-inline">
+            <div *ngIf="!logIn" >
+              <button (click)="onClick()" class="btn btn-primary " type="submit" routerLinkActive="active" 
+              routerLink="/register" >Register</button>
+            </div>
+            <div *ngIf="logIn" >
+                <button (click)="onClick()" class="btn btn-primary " type="submit" routerLinkActive="active" 
+                routerLink="/login">Login</button>
+              </div>
+          </form>
+    </mat-toolbar>
+</div>
+
+<div class="login">
+    <div class="heading">
+        <h1>Please Login to Continue</h1>
+    </div>
+    <form class="form-login">
+        <input class="form-control" type="text" #user placeholder="Username" /><br>
+        <input class="form-control" type="password" #pwd placeholder="Password"/><br/>
+        <button class="btn btn-lg btn-primary btn-block" (click)="check(user.value, pwd.value)">Login</button>
+    </form>
+    <span class="alert-msg">{{ msg }}</span>
+</div>

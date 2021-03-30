@@ -1,0 +1,38 @@
+.navbar{
+  background-color: #e91d63;
+  justify-content: space-between;
+  a{
+    color: whitesmoke;
+  }
+}
+
+.login{
+    text-align: center;
+    height: 75vh;
+    .heading{
+      padding-bottom: 50px;
+    }
+}
+
+h1{
+    color: whitesmoke;
+    margin-top: 50px;
+}
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+.form-login .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.alert-msg{
+  color: whitesmoke;
+}

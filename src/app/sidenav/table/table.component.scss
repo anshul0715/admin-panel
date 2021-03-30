@@ -1,0 +1,26 @@
+.my-table{
+    height:85vh;
+}
+
+table{
+    margin: 20px auto ;
+    margin-bottom: 0px;
+    width: 80%;
+}
+
+.paginator{
+    margin: 0px auto 20px;
+    width: 80%;
+}
+.filter{
+    margin-top: 20px;
+    margin-left: 150px;
+    justify-self: center;
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #e91d63;
+    color: whitesmoke;
+}

@@ -1,0 +1,41 @@
+.navbar{
+    background-color: #e91d63;
+    justify-content: space-between;
+}
+
+span{
+    margin-right: 15px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    font-size: large;
+    margin-top: 40px;
+    margin-left: 0px;
+}
+
+a{
+    color: whitesmoke;
+}
+.mat-success{
+    background-color: rgb(243, 20, 76);
+}
+
+.sidebar-list{
+    margin: 5%;
+}
+
+mat-sidenav{
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background-color: rgb(66, 59, 59);
+    height: 100%;
+    display: flex;
+}
+
+
+
